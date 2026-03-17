@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .weather-box {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .weather-item {
+            font-size: 1.5rem;
+            margin: 15px 0;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Hover effect */
+        .weather-box:hover {
+            transform: scale(1.03);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌤 Weather Report</h1>
+        <div class="date">{{ weather.date }}</div>
+
+        <div class="weather-box">
+            <div class="weather-item">
+                <span class="label">Average Temp:</span> {{ weather.tavg }}
+            </div>
+            <div class="weather-item">
+                <span class="label">Min Temp:</span> {{ weather.tmin }}
+            </div>
+            <div class="weather-item">
+                <span class="label">Max Temp:</span> {{ weather.tmax }}
+            </div>
+            <div class="weather-item">
+                <span class="label">Rain:</span> {{ weather.prcp }}
+            </div>
+        </div>
+
+        <div class="footer">
+            Refresh to update
+        </div>
+    </div>
+
+</body>
+</html>
